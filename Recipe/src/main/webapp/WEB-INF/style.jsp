@@ -5,6 +5,22 @@
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
 <style>
+.card img {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
@@ -30,12 +46,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-.card {
-	width: 300px;
-	margin: 20px;
-	display: inline-block;
-	vertical-align: top;
-}
+
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

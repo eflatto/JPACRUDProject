@@ -18,7 +18,7 @@
     <input type="text" name="name" value="${recipe.name}" /><br>
     
     <label for="imageURL">Image URL:</label><br>
-    <input type="text" name="imageURL" value="${recipe.imageURL}" /><br>
+    <input type="text" name="imageURL" value="${recipe.imageURL}" width="500" height="350"/><br>
     
     <label for="description">Description:</label><br>
     <textarea name="description">${recipe.description}</textarea><br>

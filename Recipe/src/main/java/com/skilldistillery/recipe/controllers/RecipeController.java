@@ -32,4 +32,14 @@ public class RecipeController {
 			return null;
 		}
 	}
+	@RequestMapping(path= {"updatedrecipe.do"})
+	public String updateRecipes(Model model,Recipe recipe) {
+		Recipe updatedRecipe = recipeDAO.update(recipe.getId(),recipe);
+		if (updatedRecipe != null) {
+			model.addAttribute("recipe",updatedRecipe);
+			return "createdrecipe";
+		}else {
+			return null;
+		}
+	}
 }

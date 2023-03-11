@@ -13,6 +13,7 @@
 	<ul>
 		<li><a href="recipes.do">View all the recipes</a></li>
 		<li><a href="addrecipesform.html">Add a recipe</a></li>
+		<li><a href="updaterecipesform.html">Update a recipe</a></li>
 
 	</ul>
 

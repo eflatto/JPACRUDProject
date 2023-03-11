@@ -1,46 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Recipe Details</title>
 </head>
 <body>
-  <table>
-  <tr>
-    <th>Name</th>
-    <td>${recipe.name}</td>
-  </tr>
-  <tr>
-    <th>Image URL</th>
-    <td>${recipe.imageURL}</td>
-  </tr>
-  <tr>
-    <th>Description</th>
-    <td>${recipe.description}</td>
-  </tr>
-  <tr>
-    <th>Ingredients</th>
-    <td>${recipe.ingredients}</td>
-  </tr>
-  <tr>
-    <th>Instructions</th>
-    <td>${recipe.instructions}</td>
-  </tr>
-  <tr>
-    <th>Servings</th>
-    <td>${recipe.servings}</td>
-  </tr>
-  <tr>
-    <th>Cook Time</th>
-    <td>${recipe.cookTime}</td>
-  </tr>
-  <tr>
-    <th>Prep Time</th>
-    <td>${recipe.prepTime}</td>
-  </tr>
-</table>
-
+	<h1>${recipe.name}</h1>
+	<img src="${recipe.imageURL}" alt="${recipe.name}"
+		style="max-width: 100%;">
+	<h2>Description</h2>
+	<p>${recipe.description}</p>
+	<h2>Ingredients</h2>
+	<p>${recipe.ingredients}</p>
+	<h2>Instructions</h2>
+	<p>${recipe.instructions}</p>
+	<h2>Servings</h2>
+	<p>${recipe.servings}</p>
+	<h2>Cook Time</h2>
+	<p>${recipe.cookTime}</p>
+	<h2>Prep Time</h2>
+	<p>${recipe.prepTime}</p>
 </body>
 </html>

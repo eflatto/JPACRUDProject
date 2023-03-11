@@ -31,15 +31,24 @@ public class RecipeDAOImpl implements RecipeDAO {
 
 	@Override
 	public Recipe create(Recipe recipe) {
-		// TODO Auto-generated method stub
 		em.persist(recipe);
 		return recipe;
 	}
 
 	@Override
 	public Recipe update(int recipeId, Recipe recipe) {
-		// TODO Auto-generated method stub
-		return null;
+		em.getTransaction().begin();
+		Recipe managed = em.find(Recipe.class, recipeId);
+		managed.setName(recipe.getName());
+	    managed.setImageURL(recipe.getImageURL());
+	    managed.setDescription(recipe.getDescription());
+	    managed.setIngredients(recipe.getIngredients());
+	    managed.setInstructions(recipe.getInstructions());
+	    managed.setServings(recipe.getServings());
+	    managed.setCookTime(recipe.getCookTime());
+	    managed.setPrepTime(recipe.getPrepTime());
+	    em.getTransaction().commit();
+		return managed;
 	}
 
 	@Override

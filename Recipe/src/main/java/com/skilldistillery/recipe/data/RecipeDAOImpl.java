@@ -32,7 +32,8 @@ public class RecipeDAOImpl implements RecipeDAO {
 	@Override
 	public Recipe create(Recipe recipe) {
 		// TODO Auto-generated method stub
-		return null;
+		em.persist(recipe);
+		return recipe;
 	}
 
 	@Override

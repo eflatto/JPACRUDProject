@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.skilldistillery.recipe.data.RecipeDAO;
+import com.skilldistillery.recipe.entities.Recipe;
 
 @Controller
 public class RecipeController {
@@ -14,7 +15,21 @@ public class RecipeController {
 	
 	@RequestMapping(path= {"/","home.do"})
 	public String goHome(Model model) {
-		model.addAttribute("recipes",recipeDAO.findAll());
 		return "home";	
+	}
+	@RequestMapping(path= {"recipes.do"})
+	public String viewRecipes(Model model) {
+		model.addAttribute("recipes",recipeDAO.findAll());
+		return "recipes";	
+	}
+	@RequestMapping(path= {"createdrecipe.do"})
+	public String addRecipes(Model model,Recipe recipe) {
+		Recipe createdRecipe = recipeDAO.create(recipe);
+		if (createdRecipe != null) {
+			model.addAttribute("recipe",createdRecipe);
+			return "createdrecipe";
+		}else {
+			return null;
+		}
 	}
 }

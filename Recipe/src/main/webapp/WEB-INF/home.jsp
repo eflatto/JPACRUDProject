@@ -5,22 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>The Recipe Book</title>
 </head>
 <body>
-<h1>Favorite Recipe</h1>
+<h1>Welcome to the Recipe Book</h1>
 
-<c:choose>
-<c:when test="${empty recipes }">No Recipes</c:when>
-<c:otherwise>
-<c:forEach var="recipe" items="${recipes}">
-<ul>
-  <li>${recipe.id } </li>
-  <li> ${recipe.name } </li>
-</ul>
+	<ul>
+		<li><a href="recipes.do">View all the recipes</a></li>
+		<li><a href="addrecipesform.html">Add a recipe</a></li>
 
-</c:forEach>
-</c:otherwise>
-</c:choose>
+	</ul>
+
 </body>
 </html>

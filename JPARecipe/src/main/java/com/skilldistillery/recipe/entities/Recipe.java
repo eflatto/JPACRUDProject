@@ -15,8 +15,25 @@ public class Recipe {
 	private int id;
 
 	private String name;
+	
 	@Column(name="image_url")
 	private String imageURL;
+	
+	private String description;
+	
+	private String ingredients;
+	
+	
+	private String instructions;
+	
+
+	private Integer servings;
+	
+	@Column(name="cook_time")
+	private Integer cookTime;
+	
+	@Column(name="prep_time")
+	private Integer prepTime;
 
 	public Recipe() {
 		super();
@@ -46,9 +63,61 @@ public class Recipe {
 		this.imageURL = imageURL;
 	}
 
-	@Override
-	public String toString() {
-		return "Recipe [id=" + id + ", name=" + name + ", imageURL=" + imageURL + "]";
+	public String getDescription() {
+		return description;
 	}
 
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
+	}
+
+	public String getInstructions() {
+		return instructions;
+	}
+
+	public void setInstructions(String instructions) {
+		this.instructions = instructions;
+	}
+
+	public Integer getServings() {
+		return servings;
+	}
+
+	public void setServings(Integer servings) {
+		this.servings = servings;
+	}
+
+	public Integer getCookTime() {
+		return cookTime;
+	}
+
+	public void setCookTime(Integer cookTime) {
+		this.cookTime = cookTime;
+	}
+
+	public Integer getPrepTime() {
+		return prepTime;
+	}
+
+	public void setPrepTime(Integer prepTime) {
+		this.prepTime = prepTime;
+	}
+
+	@Override
+	public String toString() {
+		return "Recipe [id=" + id + ", name=" + name + ", imageURL=" + imageURL + ", description=" + description
+				+ ", ingredients=" + ingredients + ", instructions=" + instructions + ", servings=" + servings
+				+ ", cookTime=" + cookTime + ", prepTime=" + prepTime + "]";
+	}
+	
+
 }
+		

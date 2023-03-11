@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.recipe.data.RecipeDAO;
 import com.skilldistillery.recipe.entities.Recipe;
@@ -32,7 +33,21 @@ public class RecipeController {
 			return null;
 		}
 	}
-	@RequestMapping(path= {"updatedrecipe.do"})
+	
+	@RequestMapping(path = "updaterecipeform.do", method = RequestMethod.GET)
+	public String updateRecipeForm(Model model, Integer id, Recipe updated) {
+		try {
+			Recipe recipe = recipeDAO.findById(id);
+			model.addAttribute(recipe);
+
+			return "updaterecipe";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "error";
+		}
+
+	}
+	@RequestMapping(path="updatedrecipe.do",method = RequestMethod.POST)
 	public String updateRecipes(Model model,Recipe recipe) {
 		Recipe updatedRecipe = recipeDAO.update(recipe.getId(),recipe);
 		if (updatedRecipe != null) {
@@ -42,4 +57,17 @@ public class RecipeController {
 			return null;
 		}
 	}
+	@RequestMapping(path="deleterecipe.do",method = RequestMethod.POST)
+	public String deleteRecipe(Model model,Recipe recipe) {
+		Recipe rec = recipeDAO.findById(recipe.getId());
+		boolean deleted = recipeDAO.deleteById(recipe.getId());
+		if (deleted) {
+			model.addAttribute("message",rec.getName()  + " deleted successfully.");
+		}else {
+			model.addAttribute("message","Failed to delete "+ rec.getName());
+			
+		}
+		return "delete";
+	}
+	
 }

@@ -9,6 +9,6 @@ public interface RecipeDAO {
 	List<Recipe> findAll();
 	Recipe create(Recipe recipe);
 	Recipe update(int recipeId, Recipe recipe);
-	Recipe deleteById(int ids);
+	boolean deleteById(int id);
 
 }

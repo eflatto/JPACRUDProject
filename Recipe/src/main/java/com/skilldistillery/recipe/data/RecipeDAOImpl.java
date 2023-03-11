@@ -37,7 +37,7 @@ public class RecipeDAOImpl implements RecipeDAO {
 
 	@Override
 	public Recipe update(int recipeId, Recipe recipe) {
-		em.getTransaction().begin();
+		
 		Recipe managed = em.find(Recipe.class, recipeId);
 		managed.setName(recipe.getName());
 	    managed.setImageURL(recipe.getImageURL());
@@ -47,14 +47,19 @@ public class RecipeDAOImpl implements RecipeDAO {
 	    managed.setServings(recipe.getServings());
 	    managed.setCookTime(recipe.getCookTime());
 	    managed.setPrepTime(recipe.getPrepTime());
-	    em.getTransaction().commit();
+	 
 		return managed;
 	}
 
 	@Override
-	public Recipe deleteById(int ids) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean deleteById(int id) {
+	    Recipe recipe = em.find(Recipe.class, id);
+	    if (recipe != null) {
+	        em.remove(recipe);
+	        return true;
+	    }
+	    return false;
 	}
+
 
 }

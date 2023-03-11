@@ -18,11 +18,21 @@ public class RecipeController {
 	public String goHome(Model model) {
 		return "home";	
 	}
+	@RequestMapping(path= {"recipesform.do"})
+	public String goToRecipeForm (Model model) {
+		return "addrecipesform";	
+	}
+	@RequestMapping(path= {"show.do"})
+	public String goToRecipeFor (Model model) {
+		return "show";	
+	}
 	@RequestMapping(path= {"recipes.do"})
 	public String viewRecipes(Model model) {
 		model.addAttribute("recipes",recipeDAO.findAll());
 		return "recipes";	
 	}
+	
+	
 	@RequestMapping(path= {"createdrecipe.do"})
 	public String addRecipes(Model model,Recipe recipe) {
 		Recipe createdRecipe = recipeDAO.create(recipe);

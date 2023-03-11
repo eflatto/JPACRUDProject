@@ -6,8 +6,8 @@
 	crossorigin="anonymous">
 <style>
 .card img {
-  max-width: 100%;
-  max-height: 250px;
+  width: 250px;
+  height: 250px;
   object-fit: contain;
 }
 
@@ -19,10 +19,13 @@
   padding: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   display: inline-block;
+  overflow: hidden;
+   max-width: 500px;
+  max-height: 1000px;
+  
 }
 
 body {
-	font-family: Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333;
@@ -30,7 +33,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	margin-top: 0;
 	margin-bottom: 20px;
@@ -59,8 +61,7 @@ a:hover {
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="recipes.do">View all the recipes</a></li>
+				
 				<li class="nav-item"><a class="nav-link" href="recipesform.do">Add
 						a recipe</a></li>
 				<li class="nav-item"><a class="nav-link" href="updateform.do">Update

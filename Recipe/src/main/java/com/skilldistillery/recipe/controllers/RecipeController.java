@@ -19,6 +19,7 @@ public class RecipeController {
 	
 	@RequestMapping(path= {"/","home.do"})
 	public String goHome(Model model) {
+		model.addAttribute("recipes",recipeDAO.findAll());
 		return "home";	
 	}
 	@RequestMapping(path= {"deleteform.do"})
@@ -39,11 +40,7 @@ public class RecipeController {
 		model.addAttribute("recipe",rec );
 		return "show";	
 	}
-	@RequestMapping(path= {"recipes.do"})
-	public String viewRecipes(Model model) {
-		model.addAttribute("recipes",recipeDAO.findAll());
-		return "recipes";	
-	}
+	
 	@RequestMapping(path= {"keyword.do"})
 	public String searchByKeyword(Model model, String keyword) {
 	    List<Recipe> recipes = recipeDAO.searchByKeyword(keyword);

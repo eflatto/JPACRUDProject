@@ -1,5 +1,8 @@
 package com.skilldistillery.recipe.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +44,13 @@ public class RecipeController {
 		model.addAttribute("recipes",recipeDAO.findAll());
 		return "recipes";	
 	}
+	@RequestMapping(path= {"keyword.do"})
+	public String searchByKeyword(Model model, String keyword) {
+	    List<Recipe> recipes = recipeDAO.searchByKeyword(keyword);
+	    model.addAttribute("recipe", recipes);
+	    return "keyword";
+	}
+
 	
 	
 	@RequestMapping(path= {"createdrecipe.do"})

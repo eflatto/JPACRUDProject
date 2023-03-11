@@ -30,36 +30,11 @@
   .card {
             width: 300px;
             margin: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-            overflow: hidden;
-            background-color: #fff;
             display: inline-block;
             vertical-align: top;
         }
 
-        .card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            vertical-align: top;
-        }
-
-        .card h2 {
-            margin: 0;
-            padding: 10px;
-            font-size: 18px;
-            text-align: center;
-        }
-         .card p {
-            margin: 0;
-            padding: 10px;
-            font-size: 14px;
-            line-height: 1.5;
-            text-align: justify;
-        }
-  
+        
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -23,7 +23,9 @@ public class RecipeController {
 		return "addrecipesform";	
 	}
 	@RequestMapping(path= {"show.do"})
-	public String goToRecipeFor (Model model) {
+	public String goToRecipeFor (Model model,Recipe recipe) {
+		Recipe rec = recipeDAO.findById(recipe.getId());
+		model.addAttribute("recipe",rec );
 		return "show";	
 	}
 	@RequestMapping(path= {"recipes.do"})

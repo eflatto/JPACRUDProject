@@ -52,10 +52,10 @@
 						<a class="nav-link" href="recipesform.do">Add a recipe</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="update.html">Update a recipe</a>
+						<a class="nav-link" href="updateform.do">Update a recipe</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="delete.html">Delete a recipe</a>
+						<a class="nav-link" href="deleteform.do">Delete a recipe</a>
 					</li>
 					
 				</ul>

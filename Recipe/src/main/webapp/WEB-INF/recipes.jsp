@@ -20,10 +20,10 @@
                     <div class="card">
                         <a href="show.do?id=${recipe.id}">
                             <img src="${recipe.imageURL}" alt="${recipe.name}">
-                            <h2>${recipe.name}</h2>
+                           <h2>${recipe.name}</h2>
                             <p>Prep Time: ${recipe.prepTime} minutes</p>
                             <p>Cook Time: ${recipe.cookTime} minutes</p>
-                            <p>Servings: ${recipe.servings}</p>
+                            <p>Servings: ${recipe.servings}</p> 
                         </a>
                     </div>
                 </c:forEach>

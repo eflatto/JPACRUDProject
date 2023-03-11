@@ -18,6 +18,14 @@ public class RecipeController {
 	public String goHome(Model model) {
 		return "home";	
 	}
+	@RequestMapping(path= {"deleteform.do"})
+	public String deleteForm(Model model) {
+		return "delete";	
+	}
+	@RequestMapping(path= {"updateform.do"})
+	public String updateForm(Model model) {
+		return "update";	
+	}
 	@RequestMapping(path= {"recipesform.do"})
 	public String goToRecipeForm (Model model) {
 		return "addrecipesform";	
@@ -79,7 +87,7 @@ public class RecipeController {
 			model.addAttribute("message","Failed to delete "+ rec.getName());
 			
 		}
-		return "delete";
+		return "deletedMessage";
 	}
 	
 }

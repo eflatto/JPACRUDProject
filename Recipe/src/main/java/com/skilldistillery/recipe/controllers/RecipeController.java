@@ -19,12 +19,27 @@ public class RecipeController {
 	
 	@RequestMapping(path= {"/","home.do"})
 	public String goHome(Model model) {
-		model.addAttribute("recipes",recipeDAO.findAll());
-		return "home";	
+		try {
+			Long count = recipeDAO.count();
+			model.addAttribute("recipes",recipeDAO.findAll());
+			model.addAttribute("count",count);
+
+			return "home";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "error";
+		}	
 	}
+	
+	
 	@RequestMapping(path= {"deleteform.do"})
 	public String deleteForm(Model model) {
-		return "delete";	
+		try {
+			return "delete";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return"error";
+		}	
 	}
 	@RequestMapping(path= {"updateform.do"})
 	public String updateForm(Model model) {
@@ -57,7 +72,7 @@ public class RecipeController {
 			model.addAttribute("recipe",createdRecipe);
 			return "createdrecipe";
 		}else {
-			return null;
+			return "error";
 		}
 	}
 	
@@ -81,7 +96,7 @@ public class RecipeController {
 			model.addAttribute("recipe",updatedRecipe);
 			return "createdrecipe";
 		}else {
-			return null;
+			return "error";
 		}
 	}
 	@RequestMapping(path="deleterecipe.do",method = RequestMethod.POST)

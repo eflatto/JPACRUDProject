@@ -13,4 +13,7 @@ public interface RecipeDAO {
 	List<Recipe> searchByKeyword(String keyword);
 
 	boolean deleteById(int id);
+	
+	public long count();
+
 }

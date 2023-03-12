@@ -70,5 +70,13 @@ public class RecipeDAOImpl implements RecipeDAO {
 		query.setParameter("keyword", "%" + keyword + "%");
 		return query.getResultList();
 	}
+	@Override
+    public long count() {
+        String jpql = "SELECT COUNT(r) FROM Recipe r";
+        TypedQuery<Long> query = em.createQuery(jpql, Long.class);
+        return query.getSingleResult();
+    }
+
+	
 
 }
